@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff0f5;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .buttons { margin-top: 30px; display: flex; gap: 20px; justify-content: center; }
+        button { padding: 10px 25px; border: none; border-radius: 10px; cursor: pointer; font-size: 18px; }
+        #yesBtn { background-color: #4CAF50; color: white; }
+        #noBtn { background-color: #f44336; color: white; position: relative; }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="card">
+        <h1>ئەسولی ئازیزم، ئایا ئاشت بوویتەوە؟</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="accept()">بەڵێ</button>
+            <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">نەخێر</button>
+        </div>
+    </div>
+
+    <script>
+        function accept() {
+            document.getElementById('card').innerHTML = "<h1>سوپاس کە لێم خۆش بوویت، زۆر دڵخۆشم! ❤</h1>";
+        }
+        function moveNo() {
+            var x = Math.random() * 200 - 100;
+            var y = Math.random() * 200 - 100;
+            document.getElementById('noBtn').style.transform = `translate(${x}px, ${y}px)`;
+        }
+    </script>
+</body>
+</html>
